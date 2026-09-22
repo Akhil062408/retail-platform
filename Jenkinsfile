@@ -172,7 +172,7 @@ pipeline {
 
                     def containerExists = bat(
                         script: """
-                            docker inspect ${PROD_CONTAINER} >nul 2>&1
+                            @docker inspect ${PROD_CONTAINER} >nul 2>&1
                         """,
                         returnStatus: true
                     )
@@ -181,7 +181,7 @@ pipeline {
 
                         env.PREVIOUS_IMAGE = bat(
                             script: """
-                                docker inspect ${PROD_CONTAINER} --format="{{.Config.Image}}"
+                                @docker inspect ${PROD_CONTAINER} --format="{{.Config.Image}}"
                             """,
                             returnStdout: true
                         ).trim()
