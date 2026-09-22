@@ -98,12 +98,16 @@ const server = http.createServer((req, res) => {
 
     if (req.url === "/payment") {
 
+        const transactionId = "TXN-4201";
+
         res.writeHead(200, {
             "Content-Type": "application/json"
         });
 
         res.end(JSON.stringify({
             payment: "SUCCESS",
+            transactionId: transactionId,
+            message: "Payment processed successfully",
             version: VERSION
         }));
 
