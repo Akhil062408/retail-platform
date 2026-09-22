@@ -1,0 +1,10 @@
+{
+  "name": "retail-platform",
+  "version": "4.2.0",
+  "description": "Enterprise Retail Platform",
+  "main": "app/server.js",
+  "scripts": {
+    "start": "node app/server.js",
+    "test": "node tests/health-test.js"
+  }
+}

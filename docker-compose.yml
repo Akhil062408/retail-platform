@@ -1,0 +1,20 @@
+services:
+
+  retail-app:
+    image: retail-app:${VERSION:-4.2.0}
+    container_name: retail-app
+    ports:
+      - "8081:8081"
+
+    environment:
+      PORT: 8081
+      VERSION: ${VERSION:-4.2.0}
+      HEALTH_STATUS: ${HEALTH_STATUS:-UP}
+
+    networks:
+      - retail-network
+
+networks:
+  retail-network:
+    name: retail-network
+    driver: bridge
