@@ -27,3 +27,5 @@ Health endpoint:
 Payment endpoint:
 
 /payment
+
+Release preparation: 4.3.0
