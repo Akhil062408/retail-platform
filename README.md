@@ -28,4 +28,4 @@ Payment endpoint:
 
 /payment
 
-Release preparation: 4.3.0
+Production release candidate: 4.3.0
