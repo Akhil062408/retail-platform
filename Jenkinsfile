@@ -424,6 +424,17 @@ pipeline {
                 }
             }
         }
+
+        stage('Verify Docker') {
+            steps {
+                bat '''
+                    echo Checking Docker...
+                    where docker
+                    docker --version
+                    docker info
+                '''
+            }
+        }
     }
 
     post {
