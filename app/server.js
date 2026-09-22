@@ -48,6 +48,30 @@ const server = http.createServer((req, res) => {
         return;
     }
 
+    if (req.url === "/products") {
+
+        res.writeHead(200, {
+            "Content-Type": "application/json"
+        });
+
+        res.end(JSON.stringify({
+            feature: "Product Search",
+            products: [
+                {
+                    id: 1,
+                    name: "Laptop"
+                },
+                {
+                    id: 2,
+                    name: "Mobile"
+                }
+            ],
+            version: VERSION
+        }));
+
+        return;
+    }
+
     if (req.url === "/payment") {
 
         res.writeHead(200, {
